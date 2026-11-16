@@ -1,6 +1,6 @@
 {
-  "name": "Kestrel Collective",
-  "description": "Modular organization portfolio template with centralized variables, neutral theme tokens, and static layout architecture.",
+  "name": "Corrofy",
+  "description": "Corrofy organization portfolio showcasing systems work, technical capabilities, team directory, and contact channels.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
