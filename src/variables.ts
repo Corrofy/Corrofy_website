@@ -25,6 +25,16 @@ export const fontTokens: FontTokens = {
   mono: '"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace',
 };
 
+const BASE_URL = import.meta.env.BASE_URL;
+
+const allImages = {
+  al: `${BASE_URL}src/assets/images/al.img.png`,
+  alfred: `${BASE_URL}src/assets/images/alfred.img.png`,
+  mohit: `${BASE_URL}src/assets/images/mohit.img.png`,
+  aman: `${BASE_URL}src/assets/images/aman.img.png`
+  
+};
+
 export const paletteVariations: PaletteVariation[] = [
   {
     id: "cerulean-ochre",
@@ -191,6 +201,16 @@ export const aboutData: AboutConfig = {
       label: "Autonomous Engineering",
       detail: "Iterated rapidly through agentic coding pipelines and human verification.",
     },
+    {
+      value: "Open Collaboration",
+      label: "Welcoming collaboration",
+      detail: "Outside collaborations are more than welcome",
+    },
+    {
+      value: "Learn-break-build",
+      label: "The learning path",
+      detail: "Learn by building and breaking stuff.",
+    },
   ],
 };
 
@@ -310,7 +330,7 @@ export const peopleData: PeopleConfig = {
       role: "Organization Creator & Owner",
       location: "Lalitpur, Nepal",
       bio: "Carpe Diem",
-      avatarUrl: "/src/assets/images/al.img.png",
+      avatarUrl: allImages.al,
       profileUrl: "https://github.com/aliz-bhattarai-001",
       profileLabel: "View GitHub",
     },
@@ -320,7 +340,7 @@ export const peopleData: PeopleConfig = {
       role: "Basically sits idle unless needed",
       location: "Wherever the wind takes",
       bio: "To where who knows",
-      avatarUrl: "/src/assets/images/alfred.img.png",
+      avatarUrl: allImages.alfred,
       profileUrl: "https://github.com/al-fred-001",
       profileLabel: "View Github",
     },
@@ -330,7 +350,7 @@ export const peopleData: PeopleConfig = {
       role: "AI Prompting & Collaborator",
       location: "Lalitpur, Nepal",
       bio: "Coincidences do not exists",
-      avatarUrl: "/src/assets/images/mohit.img.png",
+      avatarUrl: allImages.mohit,
       profileUrl: "https://github.com/bmohit123",
       profileLabel: "View Github",
     },
@@ -340,7 +360,7 @@ export const peopleData: PeopleConfig = {
       role: "Inactive so far",
       location: "Lalitpur, Nepal",
       bio: "amanhuywr",
-      avatarUrl: "/src/assets/images/aman.img.png",
+      avatarUrl: allImages.aman,
       profileUrl: "https://github.com/amanhuywr",
       profileLabel: "View Github",
     },
