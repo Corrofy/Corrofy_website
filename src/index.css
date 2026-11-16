@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--theme-font-display, "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif);
+  --font-sans: var(--theme-font-sans, "Manrope", ui-sans-serif, system-ui, sans-serif);
+  --font-mono: var(--theme-font-mono, "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--theme-bg, #f8f9fa);
+    color: var(--theme-text-primary, #121c29);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
