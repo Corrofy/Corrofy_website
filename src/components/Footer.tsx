@@ -5,12 +5,28 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--theme-bg)] py-10 transition-colors duration-200">
+    <footer className="border-t border-[var(--theme-border)] bg-[var(--theme-bg)] py-10 transition-colors duration-200">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 sm:flex-row sm:items-center sm:px-10">
-        <p className="text-xs text-[var(--theme-text-muted)]">
-          <span className="font-mono tabular-nums">© {currentYear}</span> {name}.{" "}
-          {footerData.copyrightNote}
-        </p>
+        <div className="flex items-center gap-2.5">
+          {/* Light mode logo */}
+          <img
+            src={`${import.meta.env.BASE_URL}corrofy_logo_og_black.png`}
+            alt=""
+            aria-hidden="true"
+            className="h-5 w-5 rounded-sm object-contain opacity-90 dark:hidden"
+          />
+          {/* Dark mode logo */}
+          <img
+            src={`${import.meta.env.BASE_URL}corrofy_logo_og_blue.png`}
+            alt=""
+            aria-hidden="true"
+            className="hidden h-5 w-5 rounded-sm object-contain opacity-90 dark:block"
+          />
+          <p className="text-xs text-[var(--theme-text-muted)]">
+            <span className="font-mono tabular-nums">© {currentYear}</span> {name}.{" "}
+            {footerData.copyrightNote}
+          </p>
+        </div>
 
         <a
           href={footerData.backToTopHref}

@@ -27,14 +27,25 @@ export function Navbar({ themeMode, onToggleTheme }: NavbarProps) {
     ? navigationData.themeToggle.switchToLightAria
     : navigationData.themeToggle.switchToDarkAria;
 
+  // Select logo based on the current theme mode
+  const logoFileName = isDark
+    ? "corrofy_logo_og_blue.png"
+    : "corrofy_logo_og_black.png";
+
   return (
     <header className="sticky top-0 z-30 border-b border-[var(--theme-border)] bg-[color-mix(in_srgb,var(--theme-bg)_92%,transparent)] backdrop-blur-md transition-colors duration-200">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-6 sm:px-10">
         <a
           href="#top"
-          className="font-display shrink-0 whitespace-nowrap text-lg font-medium tracking-tight text-[var(--theme-text-primary)] transition-colors duration-150 hover:text-[var(--theme-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--theme-accent)]"
+          className="font-display inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap text-lg font-medium tracking-tight text-[var(--theme-text-primary)] transition-colors duration-150 hover:text-[var(--theme-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--theme-accent)]"
         >
-          {name}
+          <img
+            src={`${import.meta.env.BASE_URL}${logoFileName}`}
+            alt=""
+            aria-hidden="true"
+            className="h-7 w-7 rounded-sm object-contain transition-opacity duration-200"
+          />
+          <span>{name}</span>
         </a>
 
         <nav
