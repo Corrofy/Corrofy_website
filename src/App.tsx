@@ -17,6 +17,7 @@ import {
 } from "./variables";
 
 import type { ThemeMode, PaletteId } from "./types/variable.types";
+import { CustomRoundedCursor } from "./components/RoundedCursor/CustomRoundedCursor";
 
 function getInitialThemeMode(): ThemeMode {
   try {
@@ -85,19 +86,24 @@ export default function App() {
   };
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-[var(--theme-bg)] text-[var(--theme-text-primary)] transition-colors duration-200">
-        <Navbar themeMode={themeMode} onToggleTheme={handleToggleTheme} />
-        <main>
-          <Hero paletteId={paletteId} onSelectPalette={setPaletteId} />
-          <AboutSection />
-          <ProjectsSection />
-          <SkillsSection />
-          <PeopleSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
-    </MotionConfig>
+    <>
+      <CustomRoundedCursor />
+      <MotionConfig reducedMotion="user">
+
+        <div className="min-h-screen bg-[var(--theme-bg)] text-[var(--theme-text-primary)] transition-colors duration-200">
+
+          <Navbar themeMode={themeMode} onToggleTheme={handleToggleTheme} />
+          <main>
+            <Hero paletteId={paletteId} onSelectPalette={setPaletteId} />
+            <AboutSection />
+            <ProjectsSection />
+            <SkillsSection />
+            <PeopleSection />
+            <ContactSection />
+          </main>
+          <Footer />
+        </div>
+      </MotionConfig>
+    </>
   );
 }
